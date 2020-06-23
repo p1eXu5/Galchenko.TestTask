@@ -8,6 +8,8 @@ namespace Galchenko.TestTask.Domain
 {
     public enum AppointmentType
     {
-        
+        Undefined,
+        Initial,
+        Secondary
     }
 }

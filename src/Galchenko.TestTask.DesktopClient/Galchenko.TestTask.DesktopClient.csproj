@@ -7,10 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Unity" Version="5.11.7" />
+    <None Remove="appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Galchenko.TestTask.ApplicationLayer\Galchenko.TestTask.ApplicationLayer.csproj" />
+    <ProjectReference Include="..\Galchenko.TestTask.Persistence\Galchenko.TestTask.Persistence.csproj" />
     <ProjectReference Include="..\Galchenko.TestTask.ViewModels\Galchenko.TestTask.ViewModels.csproj" />
   </ItemGroup>
 
