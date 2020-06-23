@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Unity;
 
 namespace Galchenko.TestTask.DesktopClient
 {
@@ -13,5 +14,17 @@ namespace Galchenko.TestTask.DesktopClient
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup( StartupEventArgs e )
+        {
+            base.OnStartup( e );
+
+            var wnd = new MainWindow();
+            wnd.Show();
+        }
+
+        private void ConfigureServices( IUnityContainer container )
+        {
+
+        }
     }
 }

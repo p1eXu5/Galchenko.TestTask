@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\submodules\p1eXu5.Wpf\src\p1eXu5.Wpf.MvvmBaseLibrary\p1eXu5.Wpf.MvvmBaseLibrary.csproj" />
+    <ProjectReference Include="..\..\submodules\p1eXu5.Wpf\src\p1eXu5.Wpf.MvvmLibrary\p1eXu5.Wpf.MvvmLibrary.csproj" />
+  </ItemGroup>
+
+</Project>
