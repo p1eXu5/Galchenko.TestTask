@@ -14,6 +14,8 @@ namespace Galchenko.TestTask.ApplicationLayer.Common
         DbSet< Patient > Patients { get; set; }
 
 #nullable disable
+        Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade Database { get; }
+
         DbSet< TEntity > Set< TEntity >() where TEntity : class;
         EntityEntry Entry( object entity );
         EntityEntry< TEntity > Entry< TEntity >( TEntity entity ) where TEntity : class;

@@ -12,6 +12,7 @@ using Galchenko.TestTask.ApplicationLayer.Common;
 using Galchenko.TestTask.DesktopClient.DialogWindows;
 using Galchenko.TestTask.Persistence;
 using Galchenko.TestTask.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using p1eXu5.Wpf.MvvmBaseLibrary;
@@ -99,6 +100,9 @@ namespace Galchenko.TestTask.DesktopClient
 
             using var scope = serviceProvider.CreateScope();
             using var dbContext = scope.ServiceProvider.GetRequiredService< IApplicationDbContext >();
+
+            dbContext.Database.EnsureCreated();
+            dbContext.Database.Migrate();
 
             DataSeeder.SeedData( dbContext );
         }
