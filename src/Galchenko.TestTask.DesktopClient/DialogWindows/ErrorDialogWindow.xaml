@@ -1,0 +1,38 @@
+﻿<Window x:Class="Galchenko.TestTask.DesktopClient.DialogWindows.ErrorDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Galchenko.TestTask.DesktopClient.DialogWindows"
+        xmlns:viewModels="clr-namespace:Galchenko.TestTask.ViewModels;assembly=Galchenko.TestTask.ViewModels"
+        d:DataContext="{d:DesignInstance viewModels:ErrorViewModel}"
+        mc:Ignorable="d"
+        Title="ErrorDialogWindow" Height="300" Width="500"
+        WindowStartupLocation="CenterOwner"
+        WindowState="Normal"
+        ResizeMode="NoResize"
+        WindowStyle="ToolWindow"
+        >
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom" 
+                Content="Ok" 
+                Command="{Binding OkCommand}"
+                Style="{StaticResource st_DialogButton}"
+                Margin="20"
+                IsCancel="True"
+                IsDefault="True"
+                />
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto"
+                      Margin="5"
+                      >
+            <TextBlock Text="{Binding Message}" 
+                       TextTrimming="CharacterEllipsis" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="Auto" Height="Auto"
+                       TextWrapping="Wrap"
+            />
+        </ScrollViewer>
+    </DockPanel>
+</Window>

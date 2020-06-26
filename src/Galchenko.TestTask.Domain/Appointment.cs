@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using Galchenko.TestTask.Domain.Contracts;
+using Galchenko.TestTask.Domain.Enums;
 
 namespace Galchenko.TestTask.Domain
 {
-    public class Appointment
+    public class Appointment : IEntityId
     {
         public int Id { get; set; }
         public DateTimeOffset Date { get; set; }

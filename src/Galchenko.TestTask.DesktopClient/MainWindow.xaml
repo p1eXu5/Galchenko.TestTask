@@ -1,16 +1,32 @@
 ﻿<Window x:Class="Galchenko.TestTask.DesktopClient.MainWindow"
+        x:Name="m_MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Galchenko.TestTask.DesktopClient"
         xmlns:userControls="clr-namespace:Galchenko.TestTask.DesktopClient.UserControls"
+        xmlns:viewModels="clr-namespace:Galchenko.TestTask.ViewModels;assembly=Galchenko.TestTask.ViewModels"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
-        Title="Clinic Registration v0.0.1b" Height="450" Width="800">
+
+        d:DataContext="{d:DesignInstance viewModels:MainViewModel}"
+
+        Title="Clinic Registration v0.0.1b" MinHeight="450" MinWidth="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize"
+        >
+
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded" SourceObject="m_MainWindow">
+            <behaviors:InvokeCommandAction Command="{Binding LoadDataCommand}" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Exit"></MenuItem>
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}" />
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
@@ -22,13 +38,13 @@
                     <TabItem.Header>
                         <TextBlock>Patients</TextBlock>
                     </TabItem.Header>
-                    <userControls:PatientListUserControl />
+                    <userControls:PatientListUserControl x:Name="m_PatientList" DataContext="{Binding}" />
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
                         <TextBlock>Appointments</TextBlock>
                     </TabItem.Header>
-                    <userControls:AppointmentListUserControl />
+                    <userControls:AppointmentListUserControl x:Name="m_AppointmentList" DataContext="{Binding}" />
                 </TabItem>
             </TabControl>
         </Grid>

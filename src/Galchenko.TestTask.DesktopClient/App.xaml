@@ -10,6 +10,8 @@
                  <ResourceDictionary Source="pack://application:,,,/Galchenko.TestTask.DesktopClient;component/Resources/Styles/ButtonStyles.xaml" />
                  <ResourceDictionary Source="pack://application:,,,/Galchenko.TestTask.DesktopClient;component/Resources/Styles/TabControlStyles.xaml" />
                  <ResourceDictionary Source="pack://application:,,,/Galchenko.TestTask.DesktopClient;component/Resources/Styles/HeaderContentControlStyles.xaml" />
+                 <ResourceDictionary Source="pack://application:,,,/Galchenko.TestTask.DesktopClient;component/Resources/Styles/DataGridStyles.xaml" />
+                 <ResourceDictionary Source="pack://application:,,,/Galchenko.TestTask.DesktopClient;component/Resources/DataTemplates.xaml" />
 
              </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>

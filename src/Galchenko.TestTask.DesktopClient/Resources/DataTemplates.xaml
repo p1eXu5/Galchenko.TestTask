@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <DataTemplate x:Key="dt_PatientTable">
+        <DataGrid x:Name="m_PatientTable"
+                  DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext}"
+                  ItemsSource="{Binding PatientVmCollection}"
+                  SelectedItem="{Binding SelectedPatient}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" MinWidth="300"/>
+                <DataGridTextColumn Header="Date of Birth" Binding="{Binding DateOfBirth, StringFormat={}{0:dd/MM/yyyy}, ConverterCulture=ru-RU }" MinWidth="150" />
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" MinWidth="150" />
+                <DataGridTextColumn Header="City" Binding="{Binding AddressVm.City}" MinWidth="200" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </DataTemplate>
+
+</ResourceDictionary>

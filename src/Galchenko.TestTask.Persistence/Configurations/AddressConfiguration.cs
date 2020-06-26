@@ -12,7 +12,7 @@ namespace Galchenko.TestTask.Persistence.Configurations
             builder.ToTable( "Addresses", "dbo" );
 
             builder
-                .Property< int >("Id")
+                .Property( a => a.Id )
                 .HasColumnType( MssqlTypes.INT )
                 .ValueGeneratedOnAdd();
             builder.HasKey( "Id" );

@@ -1,5 +1,5 @@
 ﻿
-namespace Galchenko.TestTask.Domain
+namespace Galchenko.TestTask.Domain.Enums
 {
     public enum Gender
     {

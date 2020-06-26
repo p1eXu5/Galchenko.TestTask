@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using Galchenko.TestTask.Domain.Contracts;
+using Galchenko.TestTask.Domain.Enums;
 
 namespace Galchenko.TestTask.Domain
 {
-    public class Patient
+    public class Patient : IEntityId< string >
     {
-        public string Id { get; } = Guid.NewGuid().ToString( "D" );
+        public Patient()
+        {
+            Id = Guid.NewGuid().ToString( "D" );
+        }
+
+        public string Id { get; set; }
 
         public string FirstName { get; set; } = default!;
         public string LastName { get; set; } = default!;

@@ -7,7 +7,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel LastChildFill="True">
-        <local:CrudToolBarUserControl DockPanel.Dock="Top" DataContext="{Binding}" />
-        <DataGrid></DataGrid>
+
+        <ToolBarPanel DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Content="Add" ToolTip="Add patient" Command="{Binding CreateAppointmentCommand}" />
+                <Button Content="Edit" ToolTip="Add patient" Command="{Binding UpdateAppointmentCommand}" Margin="5,0" />
+                <Button Content="Delete" ToolTip="Delete patient" Command="{Binding DeleteAppointmentCommand}" />
+            </ToolBar>
+        </ToolBarPanel>
+
+        <DataGrid x:Name="m_AppointmentTable"
+                  DataContext="{Binding}"
+                  ItemsSource="{Binding AppointmentVmCollection}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </DockPanel>
 </UserControl>

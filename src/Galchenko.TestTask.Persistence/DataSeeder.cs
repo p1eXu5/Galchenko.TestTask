@@ -2,6 +2,7 @@
 using System.Linq;
 using Galchenko.TestTask.ApplicationLayer.Common;
 using Galchenko.TestTask.Domain;
+using Galchenko.TestTask.Domain.Enums;
 
 namespace Galchenko.TestTask.Persistence
 {

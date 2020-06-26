@@ -1,5 +1,6 @@
 ﻿using System;
 using Galchenko.TestTask.Domain;
+using Galchenko.TestTask.Domain.Enums;
 using Galchenko.TestTask.Persistence.Utility;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

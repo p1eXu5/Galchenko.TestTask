@@ -1,0 +1,34 @@
+﻿<Window x:Class="Galchenko.TestTask.DesktopClient.DialogWindows.AppointmentDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:userControls="clr-namespace:Galchenko.TestTask.DesktopClient.UserControls"
+        mc:Ignorable="d"
+        Title="Appointment" MinHeight="300" MinWidth="400" 
+        ResizeMode="CanResize" 
+        WindowStyle="SingleBorderWindow" 
+        WindowStartupLocation="CenterOwner"
+        >
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <userControls:AppointmentUserControl />
+
+        <Button Grid.Row="1" Grid.Column="0"
+                Margin="0,20,0,20"
+                IsCancel="False"
+                IsDefault="True"
+                Content="Ok"
+                Style="{StaticResource st_DialogButton}"
+                Command="{Binding OkCommand}"
+        />
+
+    </Grid>
+</Window>

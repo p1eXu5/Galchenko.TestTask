@@ -10,12 +10,13 @@
         <StackPanel Orientation="Vertical" DockPanel.Dock="Top" Margin="20">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <TextBlock FontSize="22">Samuel L. Jackson</TextBlock>
-                <Button Grid.Column="1" Height="25" Width="25" Margin="20,0">Edit</Button>
+                <!-- future feature -->
+                <!--<Button Grid.Column="1" Height="25" Width="25" Margin="20,0">Edit</Button>-->
             </StackPanel>
             <TextBlock FontSize="10" FontWeight="Bold">APPOINTMENT</TextBlock>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,20,0" DockPanel.Dock="Top">
-            <HeaderedContentControl Header="Date:">
+            <HeaderedContentControl Header="Date:" VerticalContentAlignment="Bottom">
                     <TextBox Style="{StaticResource st_HeaderContentControl.Content}">FirstName</TextBox>
             </HeaderedContentControl>
             <HeaderedContentControl Header="Appointment Type:">
@@ -28,18 +29,5 @@
                 <TextBox MinLines="4">Diagnosis</TextBox>
             </HeaderedContentControl>
         </StackPanel>
-        <Grid>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Close" Style="{StaticResource st_DialogButton}"></Button>
-            </StackPanel>
-            <Grid HorizontalAlignment="Stretch">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button Content="Cancel" Margin="0,0,20,0" Style="{StaticResource st_DialogButton}"></Button>
-                <Button Grid.Column="1" Content="Ok" Style="{StaticResource st_DialogButton}"></Button>
-            </Grid>
-        </Grid>
     </DockPanel>
 </UserControl>

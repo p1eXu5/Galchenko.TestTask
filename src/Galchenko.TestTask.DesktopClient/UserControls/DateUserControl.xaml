@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Galchenko.TestTask.DesktopClient.UserControls.DateUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Galchenko.TestTask.DesktopClient"
+             xmlns:converters="clr-namespace:Galchenko.TestTask.DesktopClient.Converters"
+             xmlns:viewModels="clr-namespace:Galchenko.TestTask.ViewModels;assembly=Galchenko.TestTask.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:DateViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="300"
+             Height="Auto"
+             >
+    <UserControl.Resources>
+        <converters:MonthToIntConverter x:Key="conv_MonthToIntConverter" />
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal">
+        <ComboBox x:Name="m_Day" MinWidth="50"
+                  local:DateElement.Year="{Binding ElementName=m_Year, Path=SelectedValue}"
+                  local:DateElement.Month="{Binding Month}"
+                  SelectedValue="{Binding Day}"
+                  />
+        <ComboBox x:Name="m_Month" MinWidth="150" SelectedIndex="{Binding Month, Converter={StaticResource conv_MonthToIntConverter}}" >
+            <ComboBoxItem>January</ComboBoxItem>
+            <ComboBoxItem>February</ComboBoxItem>
+            <ComboBoxItem>March</ComboBoxItem>
+            <ComboBoxItem>April</ComboBoxItem>
+            <ComboBoxItem>May</ComboBoxItem>
+            <ComboBoxItem>June</ComboBoxItem>
+            <ComboBoxItem>July</ComboBoxItem>
+            <ComboBoxItem>August</ComboBoxItem>
+            <ComboBoxItem>September</ComboBoxItem>
+            <ComboBoxItem>October</ComboBoxItem>
+            <ComboBoxItem>November</ComboBoxItem>
+            <ComboBoxItem>December</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="m_Year" MinWidth="100"
+                  local:DateElement.MinYear ="{Binding MinYear, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                  local:DateElement.MaxYear ="{Binding MaxYear, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding Year}"
+                  >
+        </ComboBox>
+    </StackPanel>
+</UserControl>

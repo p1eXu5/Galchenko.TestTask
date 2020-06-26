@@ -23,7 +23,7 @@
                 <ControlTemplate TargetType="HeaderedContentControl">
                     <Grid HorizontalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="125" />
                             <ColumnDefinition MinWidth="200" Width="*" />
                         </Grid.ColumnDefinitions>
                         <ContentPresenter ContentSource="Header" 

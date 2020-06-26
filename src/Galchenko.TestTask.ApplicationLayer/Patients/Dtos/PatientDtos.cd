@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Patients.Dtos.PatientUpdateDto">
+    <Position X="1.5" Y="4" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Patients\Dtos\PatientUpdateDto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Patients.Dtos.PatientNewDto">
+    <Position X="5.75" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Patients\Dtos\PatientNewDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Patients.Dtos.PatientDtoBase">
+    <Position X="4" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAACAAAAQAAAAAAAQAAAAAAAAIAAAAAg=</HashCode>
+      <FileName>Patients\Dtos\PatientDtoBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Patients.Dtos.PatientViewDto">
+    <Position X="1" Y="6.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Patients\Dtos\PatientViewDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Patients.Dtos.PatientAppointmentViewDto">
+    <Position X="9.75" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Patients\Dtos\PatientAppointmentViewDto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

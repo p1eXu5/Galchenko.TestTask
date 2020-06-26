@@ -1,12 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>CS8600;CS8602;CS8603;CS8669</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\submodules\p1eXu5.Wpf\src\p1eXu5.Wpf.MvvmBaseLibrary\p1eXu5.Wpf.MvvmBaseLibrary.csproj" />
     <ProjectReference Include="..\..\submodules\p1eXu5.Wpf\src\p1eXu5.Wpf.MvvmLibrary\p1eXu5.Wpf.MvvmLibrary.csproj" />
+    <ProjectReference Include="..\Galchenko.TestTask.ApplicationLayer\Galchenko.TestTask.ApplicationLayer.csproj" />
   </ItemGroup>
 
 </Project>

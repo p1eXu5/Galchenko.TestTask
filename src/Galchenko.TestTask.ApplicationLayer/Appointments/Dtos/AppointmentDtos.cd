@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Appointments.Dtos.AppointmentNewDto">
+    <Position X="2.75" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Appointments\Dtos\AppointmentNewDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Appointments.Dtos.AppointmentUpdateDto">
+    <Position X="7.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Appointments\Dtos\AppointmentUpdateDto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Appointments.Dtos.AppointmentDtoBase">
+    <Position X="4.75" Y="1.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAABAQAAAAAAAAA=</HashCode>
+      <FileName>Appointments\Dtos\AppointmentDtoBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Galchenko.TestTask.ApplicationLayer.Appointments.Dtos.AppointmentViewDto">
+    <Position X="2" Y="6.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Appointments\Dtos\AppointmentViewDto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
