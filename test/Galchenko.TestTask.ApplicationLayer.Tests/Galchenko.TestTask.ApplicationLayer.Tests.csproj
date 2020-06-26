@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Galchenko.TestTask.ApplicationLayer\Galchenko.TestTask.ApplicationLayer.csproj" />
+    <ProjectReference Include="..\..\src\Galchenko.TestTask.ApplicationLayer\Galchenko.TestTask.ApplicationLayer.csproj" />
   </ItemGroup>
 
 </Project>
