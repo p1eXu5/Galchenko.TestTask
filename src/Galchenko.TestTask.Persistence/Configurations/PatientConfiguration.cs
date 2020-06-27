@@ -23,7 +23,7 @@ namespace Galchenko.TestTask.Persistence.Configurations
 
             builder
                 .Property( p => p.Gender )
-                .HasColumnType( MssqlTypes.NVARCHAR( 8 ) )
+                .HasColumnType( MssqlTypes.NVARCHAR( 16 ) )
                 .HasConversion(
                     v => v.ToString(),
                     v => ( Gender )Enum.Parse( typeof( Gender ), v ) );

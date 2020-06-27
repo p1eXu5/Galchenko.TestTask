@@ -5,6 +5,7 @@ using Galchenko.TestTask.Domain;
 namespace Galchenko.TestTask.ApplicationLayer.Addresses.Dtos
 {
     [MapTo( typeof(Address), ReverseMap = true )]
+    [MapFrom( typeof(AddressUpdateDto) )]
     public class AddressNewDto : IEntityDto
     {
         public string Line1 { get; set; } = default!;

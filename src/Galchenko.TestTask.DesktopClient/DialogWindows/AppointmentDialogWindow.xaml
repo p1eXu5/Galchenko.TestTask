@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:userControls="clr-namespace:Galchenko.TestTask.DesktopClient.UserControls"
         mc:Ignorable="d"
-        Title="Appointment" MinHeight="300" MinWidth="400" 
+        Title="Appointment" Height="350" MinWidth="400" MaxWidth="600" 
         ResizeMode="CanResize" 
         WindowStyle="SingleBorderWindow" 
         WindowStartupLocation="CenterOwner"
@@ -19,16 +19,28 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <userControls:AppointmentUserControl />
+        <userControls:AppointmentUserControl VerticalAlignment="Stretch" 
+                                             VerticalContentAlignment="Stretch"
+                                             DataContext="{Binding}"
+                                             />
 
-        <Button Grid.Row="1" Grid.Column="0"
-                Margin="0,20,0,20"
-                IsCancel="False"
-                IsDefault="True"
-                Content="Ok"
-                Style="{StaticResource st_DialogButton}"
-                Command="{Binding OkCommand}"
-        />
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    Margin="0,20,0,20"
+                    HorizontalAlignment="Center"
+                    >
+            <Button Content="Cancel"
+                    IsCancel="True"
+                    Style="{StaticResource st_DialogButton}"
+                    Command="{Binding CancelCommand}"
+            />
+            <Button Margin="40,0,0,0"
+                    Content="Ok"
+                    IsDefault="False"
+                    Style="{StaticResource st_DialogButton}"
+                    Command="{Binding OkCommand}"
+            />
+        </StackPanel>
 
     </Grid>
 </Window>

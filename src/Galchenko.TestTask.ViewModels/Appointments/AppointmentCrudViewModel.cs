@@ -6,6 +6,7 @@ using FluentValidation;
 using Galchenko.TestTask.ApplicationLayer.Appointments.Dtos;
 using Galchenko.TestTask.ApplicationLayer.Common;
 using Galchenko.TestTask.Domain;
+using Galchenko.TestTask.Domain.Enums;
 using Galchenko.TestTask.ViewModels.Contracts;
 using Microsoft.Extensions.Logging;
 using p1eXu5.Wpf.MvvmBaseLibrary;
@@ -19,12 +20,12 @@ namespace Galchenko.TestTask.ViewModels.Appointments
                                          DialogRepository dialogRepository, 
                                          ILogger< AppointmentCrudViewModel > logger, 
                                          IMapper mapper,
-                                         IValidator< AppointmentUpdateDto > appointmentUpdateDtoValidator,
+                                         IValidator< AppointmentViewDto > appointmentViewDtoValidator,
                                          IValidator< AppointmentNewDto > appointmentNewDtoValidator
                                          ) 
             : base( repository, dialogRepository, logger, mapper )
         {
-            AppointmentUpdateDtoValidator = appointmentUpdateDtoValidator;
+            AppointmentViewDtoValidator = appointmentViewDtoValidator;
             AppointmentNewDtoValidator = appointmentNewDtoValidator;
         }
 
@@ -32,7 +33,7 @@ namespace Galchenko.TestTask.ViewModels.Appointments
         protected override Func< IQueryable< Appointment >, IQueryable< Appointment > >? LoadInclude { get; } 
             = ApplicationLayer.Common.Repository.AppointmentIncludePatient;
 
-        public IValidator< AppointmentUpdateDto > AppointmentUpdateDtoValidator { get; }
+        public IValidator< AppointmentViewDto > AppointmentViewDtoValidator { get; }
         public IValidator< AppointmentNewDto > AppointmentNewDtoValidator { get; }
 
 
@@ -44,9 +45,9 @@ namespace Galchenko.TestTask.ViewModels.Appointments
 
         protected override (bool, AppointmentNewDto) CreateNewDto()
         {
-            var appointmentDto = new AppointmentViewDto();
+            var appointmentDto = new AppointmentViewDto() { Type = AppointmentType.Initial, Date = DateTimeOffset.UtcNow };
 
-            var vm = new AppointmentViewModel( appointmentDto, AppointmentNewDtoValidator, DialogRepository );
+            var vm = new AppointmentViewModel( appointmentDto, AppointmentNewDtoValidator, DialogRepository, Repository, Mapper );
             var dialog = DialogRepository.GetView( vm );
             
             if (dialog?.ShowDialog() == true) {
@@ -58,13 +59,14 @@ namespace Galchenko.TestTask.ViewModels.Appointments
             return (false, appointmentDto);
         }
 
+        public override IAsyncCommand CreateCommand  => new MvvmAsyncCommand( CreateAsync< AppointmentViewDto >, errorHandler: this );
         public override IAsyncCommand UpdateCommand  => new MvvmAsyncCommand( UpdateAsync< AppointmentViewDto >, errorHandler: this );
 
         protected override (bool, AppointmentUpdateDto) UpdateDto< TDto >( TDto dto )
         {
             if ( !(dto is AppointmentViewDto appointmentDto) ) throw new ArgumentException( "Not AppointmentViewDto" );
 
-            var vm = new AppointmentViewModel( appointmentDto, AppointmentUpdateDtoValidator, DialogRepository );
+            var vm = new AppointmentViewModel( appointmentDto, AppointmentViewDtoValidator, DialogRepository, Repository, Mapper );
             var dialog = DialogRepository.GetView( vm );
             var res = false;
 

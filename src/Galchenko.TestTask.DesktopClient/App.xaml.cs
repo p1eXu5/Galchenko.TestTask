@@ -82,6 +82,7 @@ namespace Galchenko.TestTask.DesktopClient
             dialogRepository.Register< PatientUpdateViewModel, PatientDialogWindow >();
             dialogRepository.Register< PatientNewViewModel, PatientDialogWindow >();
             dialogRepository.Register< AppointmentViewModel, AppointmentDialogWindow >();
+            dialogRepository.Register< PatientListViewModel, PatientListDialogWindow >();
             dialogRepository.Register< ErrorViewModel, ErrorDialogWindow >();
             return dialogRepository;
         }

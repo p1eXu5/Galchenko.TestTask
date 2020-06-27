@@ -15,7 +15,7 @@ namespace Galchenko.TestTask.ApplicationLayer.Appointments.Validators
         {
             Include( new AppointmentDtoBaseValidator() );
 
-            RuleFor( a => a.PatientId ).SetValidator( new PatientIdValidator() );
+            RuleFor( a => a.PatientId ).NotNull().SetValidator( new PatientIdValidator() );
         }   
     }
 }
