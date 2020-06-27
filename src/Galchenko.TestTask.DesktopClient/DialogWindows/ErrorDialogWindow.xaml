@@ -24,7 +24,7 @@
                 />
         <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto"
-                      Margin="5"
+                      Margin="25"
                       >
             <TextBlock Text="{Binding Message}" 
                        TextTrimming="CharacterEllipsis" 

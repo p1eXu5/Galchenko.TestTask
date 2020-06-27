@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Galchenko.TestTask.DesktopClient.UserControls"
              xmlns:viewModels="clr-namespace:Galchenko.TestTask.ViewModels;assembly=Galchenko.TestTask.ViewModels"
              xmlns:converters="clr-namespace:Galchenko.TestTask.DesktopClient.Converters"
-             d:DataContext="{d:DesignInstance viewModels:PatientUpdateViewModel}"
+             xmlns:patients="clr-namespace:Galchenko.TestTask.ViewModels.Patients;assembly=Galchenko.TestTask.ViewModels"
+             d:DataContext="{d:DesignInstance patients:PatientUpdateViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="600">
     <UserControl.Resources>
@@ -48,17 +49,17 @@
                 <StackPanel Orientation="Horizontal">
                     <RadioButton IsChecked="{Binding Path=Gender, 
                                              Converter={StaticResource conv_EnumBooleanConverter}, 
-                                             ConverterParameter=Male}" >
+                                             ConverterParameter=Male, Mode=TwoWay}" >
                         Male
                     </RadioButton>
                     <RadioButton Margin="20,0"
                                  IsChecked="{Binding Path=Gender, 
                                              Converter={StaticResource conv_EnumBooleanConverter}, 
-                                             ConverterParameter=Female}"
+                                             ConverterParameter=Female, Mode=TwoWay}"
                                  >Female</RadioButton>
                     <RadioButton IsChecked="{Binding Path=Gender, 
                                              Converter={StaticResource conv_EnumBooleanConverter}, 
-                                             ConverterParameter=Other}">
+                                             ConverterParameter=Other, Mode=TwoWay}">
                         Other
                     </RadioButton>
                 </StackPanel>

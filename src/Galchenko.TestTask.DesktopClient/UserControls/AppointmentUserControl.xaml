@@ -4,30 +4,63 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Galchenko.TestTask.DesktopClient.UserControls"
+             xmlns:appointments="clr-namespace:Galchenko.TestTask.ViewModels.Appointments;assembly=Galchenko.TestTask.ViewModels"
+             xmlns:converters="clr-namespace:Galchenko.TestTask.DesktopClient.Converters"
+             d:DataContext="{d:DesignInstance appointments:AppointmentViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:EnumBooleanConverter x:Key="conv_EnumBooleanConverter" />
+    </UserControl.Resources>
+
     <DockPanel LastChildFill="True">
+
         <StackPanel Orientation="Vertical" DockPanel.Dock="Top" Margin="20">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <TextBlock FontSize="22">Samuel L. Jackson</TextBlock>
+                <TextBlock FontSize="22" Text="{Binding Name}" MinWidth="200"></TextBlock>
                 <!-- future feature -->
-                <!--<Button Grid.Column="1" Height="25" Width="25" Margin="20,0">Edit</Button>-->
+                <Button Grid.Column="1" Height="25" Width="25" Margin="20,0" Command="{Binding SelectPatientCommand}">...</Button>
             </StackPanel>
             <TextBlock FontSize="10" FontWeight="Bold">APPOINTMENT</TextBlock>
         </StackPanel>
+        
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,20,0" DockPanel.Dock="Top">
+
             <HeaderedContentControl Header="Date:" VerticalContentAlignment="Bottom">
-                    <TextBox Style="{StaticResource st_HeaderContentControl.Content}">FirstName</TextBox>
+                    <local:DateUserControl DataContext="{Binding Date}"></local:DateUserControl>
             </HeaderedContentControl>
+
             <HeaderedContentControl Header="Appointment Type:">
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton>Initial</RadioButton>
-                    <RadioButton Margin="20,0,0,0">Secondary</RadioButton>
+                    <RadioButton IsChecked="{Binding Path=Type, 
+                                             Converter={StaticResource conv_EnumBooleanConverter}, 
+                                             ConverterParameter=Initial, 
+                                             Mode=TwoWay}"
+                                 >
+                        Initial
+                    </RadioButton>
+
+                    <RadioButton Margin="20,0,0,0"
+                                 IsChecked="{Binding Path=Type, 
+                                             Converter={StaticResource conv_EnumBooleanConverter}, 
+                                             ConverterParameter=Secondary,
+                                             Mode=TwoWay }"
+                                 >
+                        Secondary
+                    </RadioButton>
                 </StackPanel>
             </HeaderedContentControl>
-            <HeaderedContentControl Header="Diagnosis:" VerticalContentAlignment="Top">
-                <TextBox MinLines="4">Diagnosis</TextBox>
+
+            <HeaderedContentControl Header="Diagnosis:" VerticalContentAlignment="Stretch">
+                <TextBox MinLines="4" 
+                         Text="{Binding Diagnosis}" 
+                         VerticalScrollBarVisibility="Auto" 
+                         TextWrapping="Wrap" 
+                         VerticalContentAlignment="Stretch" 
+                         VerticalAlignment="Stretch"
+                         MinHeight="80"/>
             </HeaderedContentControl>
+
         </StackPanel>
     </DockPanel>
 </UserControl>

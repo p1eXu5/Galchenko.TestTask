@@ -107,19 +107,20 @@ namespace Galchenko.TestTask.ViewModels.Contracts
 
 
         #region CreatePatientCommand
-        public IAsyncCommand CreateCommand => new MvvmAsyncCommand( CreateAsync, errorHandler: this );
+        public virtual IAsyncCommand CreateCommand => new MvvmAsyncCommand( CreateAsync< TUpdateDto >, errorHandler: this );
 
 
         protected abstract (bool, TNewDto) CreateNewDto();
 
-        private async Task CreateAsync( object o )
+        protected async Task CreateAsync<TDto>( object o )
+            where TDto : class, IEntityDto
         {
             var (isCreated, dto) = CreateNewDto();
 
             if ( isCreated ) {
                 TKey id = await Repository.CreateAsync< TEntity, TNewDto, TKey>( dto );
                 if (id is { }) {
-                    await GetAndAddVmAsync<TUpdateDto, TViewModel>( id );
+                    await GetAndAddVmAsync<TDto, TViewModel>( id );
                 }
                 else {
                     ShowError( "An error occurred while creating patient." );
@@ -172,8 +173,11 @@ namespace Galchenko.TestTask.ViewModels.Contracts
 
                 if ( isUpdated ) {
                     result = await Repository.UpdateAsync< TUpdateDto, TEntity, TKey>( updateDto! );
+
                     if (result.Succeeded) {
-                        await GetAndAddVmAsync< TUpdateDto, TViewModel >( updateDto!.Id );
+                        if ( _vmCollection.Remove( selectedVm ) ) {
+                            await GetAndAddVmAsync< TDto, TViewModel >( updateDto!.Id );
+                        }
                     }
                 }
             }
@@ -210,6 +214,8 @@ namespace Galchenko.TestTask.ViewModels.Contracts
         void IErrorHandler.HandleError( Exception ex )
         {
             Logger.Log( LogLevel.Error, ex.Message );
+            // ShowError( ex.Message + "\n" + ex.InnerException?.Message );
+            ShowError( "An error has occurred and the application will now close." );
         }
 
         protected void ShowError( string message )

@@ -17,7 +17,7 @@ namespace Galchenko.TestTask.ViewModels.Appointments
 
         public int Id => _appointment.Id;
 
-        public DateTimeOffset Date => _appointment.Date;
+        public DateTimeOffset Date => _appointment.Date.LocalDateTime;
         public string Name => $"{_appointment.Patient.LastName} {_appointment.Patient.FirstName} {_appointment.Patient.MiddleName ?? ""}";
         public AppointmentType Type => _appointment.Type;
     }

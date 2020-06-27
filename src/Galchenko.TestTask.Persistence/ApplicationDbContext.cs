@@ -25,5 +25,11 @@ namespace Galchenko.TestTask.Persistence
         {
             builder.ApplyConfigurationsFromAssembly( typeof( PatientConfiguration ).Assembly );
         }
+
+        protected override void OnConfiguring( DbContextOptionsBuilder optionsBuilder )
+        {
+            base.OnConfiguring( optionsBuilder );
+            optionsBuilder.EnableSensitiveDataLogging();
+        }
     }
 }

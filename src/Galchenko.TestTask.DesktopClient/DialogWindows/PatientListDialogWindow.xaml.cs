@@ -9,13 +9,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using p1eXu5.Wpf.MvvmBaseLibrary;
 
 namespace Galchenko.TestTask.DesktopClient.DialogWindows
 {
     /// <summary>
     /// Interaction logic for PatientListDialogWindow.xaml
     /// </summary>
-    public partial class PatientListDialogWindow : Window
+    public partial class PatientListDialogWindow : Window, IDialog
     {
         public PatientListDialogWindow()
         {

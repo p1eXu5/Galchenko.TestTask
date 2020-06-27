@@ -20,7 +20,7 @@ namespace Galchenko.TestTask.Persistence.Configurations
 
             builder
                 .Property( p => p.Type )
-                .HasColumnType( MssqlTypes.NVARCHAR( 8 ) )
+                .HasColumnType( MssqlTypes.NVARCHAR( 16 ) )
                 .HasConversion(
                     v => v.ToString(),
                     v => ( AppointmentType )Enum.Parse( typeof( AppointmentType ), v ) );

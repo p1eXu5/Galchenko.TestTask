@@ -116,7 +116,12 @@ namespace Galchenko.TestTask.ApplicationLayer.Common
             }
 
             Mapper.Map( updateDto, entity, typeof( TUpdateDto ), typeof( TEntity ) );
-            await DbContext.SaveChangesAsync();
+            try {
+                await DbContext.SaveChangesAsync();
+            }
+            catch ( Exception ex ) {
+                ;
+            }
             
             return Result.Success();
         }

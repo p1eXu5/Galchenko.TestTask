@@ -25,11 +25,13 @@
                   ItemsSource="{Binding VmCollection}"
                   SelectedItem="{Binding SelectedVm}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat={}{0:dd/MM/yyyy}, ConverterCulture=ru-RU}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
+                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat={}{0:dd/MM/yyyy}, ConverterCulture=ru-RU}" MinWidth="150" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" MinWidth="300" />
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}"  MinWidth="150" />
             </DataGrid.Columns>
         </DataGrid>
     </DataTemplate>
+
+
 
 </ResourceDictionary>

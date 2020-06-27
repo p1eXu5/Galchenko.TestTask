@@ -10,6 +10,9 @@ namespace Galchenko.TestTask.ViewModels
     public class DateViewModel : ViewModelBase
     {
 
+        private int _minYear;
+        private int _maxYear;
+
         public DateViewModel( DateTime date )
         {
             Date = date;
@@ -82,7 +85,22 @@ namespace Galchenko.TestTask.ViewModels
             }
         }
 
-        public int MinYear { get; }
-        public int MaxYear { get; }
+        public int MinYear 
+        { 
+            get => _minYear; 
+            internal set {
+                _minYear = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int MaxYear 
+        { 
+            get => _maxYear; 
+            internal set {
+                _maxYear = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

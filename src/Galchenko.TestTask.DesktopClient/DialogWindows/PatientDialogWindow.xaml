@@ -28,7 +28,7 @@
                     HorizontalAlignment="Center"
                     >
             <Button Content="Cancel"
-                    IsDefault="True"
+                    IsCancel="True"
                     Style="{StaticResource st_DialogButton}"
                     Command="{Binding CancelCommand}"
             />
