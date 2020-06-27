@@ -31,6 +31,10 @@ namespace Galchenko.TestTask.ApplicationLayer.Common.Models
             return new Result(false, new string[] { error });
         }
 
+        /// <summary>
+        /// Returns errors aggregate.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             if ( Errors.Any() ) {

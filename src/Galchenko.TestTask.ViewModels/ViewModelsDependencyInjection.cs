@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Galchenko.TestTask.ViewModels.Appointments;
+using Galchenko.TestTask.ViewModels.Patients;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Galchenko.TestTask.ViewModels
@@ -11,7 +8,9 @@ namespace Galchenko.TestTask.ViewModels
     {
         public static void AddViewModels( this IServiceCollection services )
         {
-            services.AddTransient< MainViewModel >();
+            services.AddTransient< MainViewModel_v2 >();
+            services.AddTransient< PatientCrudViewModel >();
+            services.AddTransient< AppointmentCrudViewModel >();
         }
     }
 }

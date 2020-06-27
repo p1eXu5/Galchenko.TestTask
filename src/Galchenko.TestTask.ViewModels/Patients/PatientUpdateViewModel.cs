@@ -12,7 +12,7 @@ using Galchenko.TestTask.Domain.Enums;
 using p1eXu5.Wpf.MvvmBaseLibrary;
 using DialogViewModel = p1eXu5.Wpf.MvvmLibrary.DialogViewModel;
 
-namespace Galchenko.TestTask.ViewModels
+namespace Galchenko.TestTask.ViewModels.Patients
 {
     public class PatientUpdateViewModel : PatientViewModelBase< PatientUpdateDto >
     {

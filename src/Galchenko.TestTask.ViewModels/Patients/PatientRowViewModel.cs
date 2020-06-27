@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Galchenko.TestTask.ApplicationLayer.Patients.Dtos;
+using Galchenko.TestTask.ViewModels.Contracts;
 using p1eXu5.Wpf.MvvmLibrary;
 
-namespace Galchenko.TestTask.ViewModels
+namespace Galchenko.TestTask.ViewModels.Patients
 {
-    public class PatientRowViewModel : ViewModelBase
+    public class PatientRowViewModel : ViewModelBase, IIdViewModel< string >
     {
 
         public PatientRowViewModel( PatientUpdateDto patient )

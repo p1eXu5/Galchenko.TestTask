@@ -12,6 +12,8 @@ using Galchenko.TestTask.ApplicationLayer.Common;
 using Galchenko.TestTask.DesktopClient.DialogWindows;
 using Galchenko.TestTask.Persistence;
 using Galchenko.TestTask.ViewModels;
+using Galchenko.TestTask.ViewModels.Appointments;
+using Galchenko.TestTask.ViewModels.Patients;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -56,7 +58,7 @@ namespace Galchenko.TestTask.DesktopClient
             
             SeedData();
 
-            var mvm = ServiceProvider.GetRequiredService< MainViewModel >();
+            var mvm = ServiceProvider.GetRequiredService< MainViewModel_v2 >();
             mainWindow.DataContext = mvm;
             mainWindow.Show();
         }

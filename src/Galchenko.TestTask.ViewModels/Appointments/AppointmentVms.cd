@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Galchenko.TestTask.ViewModels.Appointments.AppointmentCrudViewModel">
+    <Position X="1" Y="10.25" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Appointments\AppointmentCrudViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Appointments.AppointmentRowViewModel" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAABAQBAAAAAAAA=</HashCode>
+      <FileName>Appointments\AppointmentRowViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Appointments.AppointmentViewModel">
+    <Position X="8.75" Y="6.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Appointments\AppointmentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Contracts.CrudViewModel&lt;TViewModel, TNewDto, TUpdateDto, TEntity, TKey&gt;">
+    <Position X="1" Y="1.25" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAiEIAAAIAAAEACGRGAAQAgAACAAgCAAAAhIQAAJA=</HashCode>
+      <FileName>Contracts\CrudViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

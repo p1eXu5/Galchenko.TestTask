@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Galchenko.TestTask.ViewModels.Patients.PatientAppointmentsViewModel">
+    <Position X="14.25" Y="10.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Patients\PatientAppointmentsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Patients.PatientCrudViewModel">
+    <Position X="2.25" Y="10.5" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAACAAAAgA=</HashCode>
+      <FileName>Patients\PatientCrudViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Patients.PatientNewViewModel">
+    <Position X="15.25" Y="6.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Patients\PatientNewViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Patients.PatientRowViewModel" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="10.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAIAAACIA=</HashCode>
+      <FileName>Patients\PatientRowViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Patients.PatientUpdateViewModel">
+    <Position X="10.5" Y="6.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Patients\PatientUpdateViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Patients.PatientViewModelBase&lt;TDto&gt;">
+    <Position X="12.75" Y="1" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAACBAAAQAAgAAAQQAAAAAAAAIAAACAg=</HashCode>
+      <FileName>Patients\PatientViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Galchenko.TestTask.ViewModels.Contracts.CrudViewModel&lt;TViewModel, TNewDto, TUpdateDto, TEntity, TKey&gt;">
+    <Position X="2.25" Y="1.5" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAiEIAAAIAAAEACGRGAAQAgAACAAgCAAAAhIQAAJA=</HashCode>
+      <FileName>Contracts\CrudViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

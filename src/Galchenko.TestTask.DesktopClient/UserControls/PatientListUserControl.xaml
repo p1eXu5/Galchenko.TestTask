@@ -11,16 +11,16 @@
 
         <ToolBarPanel DockPanel.Dock="Top">
             <ToolBar>
-                <Button Content="Add" ToolTip="Add patient" Command="{Binding CreatePatientCommand}" />
-                <Button Content="Edit" ToolTip="Add patient" Command="{Binding UpdatePatientCommand}" Margin="5,0" />
-                <Button Content="Delete" ToolTip="Delete patient" Command="{Binding DeletePatientCommand}" />
+                <Button Content="Add" ToolTip="Add patient" Command="{Binding CreateCommand}" />
+                <Button Content="Edit" ToolTip="Add patient" Command="{Binding UpdateCommand}" Margin="5,0" />
+                <Button Content="Delete" ToolTip="Delete patient" Command="{Binding DeleteCommand}" />
             </ToolBar>
         </ToolBarPanel>
 
-        <ContentControl x:Name="m_Table" ContentTemplate="{StaticResource dt_PatientTable}" >
+        <ContentControl x:Name="m_Table"  Content="{Binding}" >
             <behavior:Interaction.Triggers>
                 <behavior:EventTrigger EventName="MouseDoubleClick" SourceObject="{Binding ElementName=m_Table}">
-                    <behavior:InvokeCommandAction Command="{Binding UpdatePatientCommand}" />
+                    <behavior:InvokeCommandAction Command="{Binding UpdateCommand}" />
                 </behavior:EventTrigger>
             </behavior:Interaction.Triggers>
         </ContentControl>

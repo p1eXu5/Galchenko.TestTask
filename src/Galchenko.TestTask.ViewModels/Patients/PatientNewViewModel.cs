@@ -7,7 +7,7 @@ using FluentValidation;
 using Galchenko.TestTask.ApplicationLayer.Patients.Dtos;
 using p1eXu5.Wpf.MvvmBaseLibrary;
 
-namespace Galchenko.TestTask.ViewModels
+namespace Galchenko.TestTask.ViewModels.Patients
 {
     public class PatientNewViewModel : PatientViewModelBase< PatientNewDto >
     {

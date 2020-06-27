@@ -15,6 +15,8 @@ using Galchenko.TestTask.ApplicationLayer.Common;
 using Galchenko.TestTask.ApplicationLayer.Patients;
 using Galchenko.TestTask.ApplicationLayer.Patients.Dtos;
 using Galchenko.TestTask.Domain;
+using Galchenko.TestTask.ViewModels.Appointments;
+using Galchenko.TestTask.ViewModels.Patients;
 using Microsoft.Extensions.Logging;
 using p1eXu5.Wpf.MvvmBaseLibrary;
 using p1eXu5.Wpf.MvvmLibrary;
@@ -116,24 +118,24 @@ namespace Galchenko.TestTask.ViewModels
             var newPatient = new PatientNewDto { Address = new AddressNewDto() };
 
             var vm = new PatientNewViewModel( newPatient, _patientNewDtoValidator, _dialogRepository );
-                var dialog = _dialogRepository.GetView( vm );
+            var dialog = _dialogRepository.GetView( vm );
+            
+            if (dialog?.ShowDialog() == true) {
                 
-                if (dialog?.ShowDialog() == true) {
-                    
-                    string? id = await _repository.CreateAsync< Patient, PatientNewDto, string>( vm.Patient );
-                    
-                    if ( id is {} ) {
-                        var (result, patient) = await _repository.GetByIdAsync<PatientUpdateDto, Patient, string>( id );
-                        if ( result.Succeeded ) {
-                            var patientRow = new PatientRowViewModel( patient! );
-                            _patientVmCollection.Add( patientRow );
-                            SelectedPatient = patientRow;
-                        }
-                    }
-                    else {
-                        ShowError( "An error occurred while creating patient." );
+                string? id = await _repository.CreateAsync< Patient, PatientNewDto, string>( vm.Patient );
+                
+                if ( id is {} ) {
+                    var (result, patient) = await _repository.GetByIdAsync<PatientUpdateDto, Patient, string>( id );
+                    if ( result.Succeeded ) {
+                        var patientRow = new PatientRowViewModel( patient! );
+                        _patientVmCollection.Add( patientRow );
+                        SelectedPatient = patientRow;
                     }
                 }
+                else {
+                    ShowError( "An error occurred while creating patient." );
+                }
+            }
         }
 
         #endregion

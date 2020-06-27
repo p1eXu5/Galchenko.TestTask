@@ -6,11 +6,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Galchenko.TestTask.DesktopClient"
         xmlns:userControls="clr-namespace:Galchenko.TestTask.DesktopClient.UserControls"
+        xmlns:patientViewModels="clr-namespace:Galchenko.TestTask.ViewModels.Patients;assembly=Galchenko.TestTask.ViewModels"
+        xmlns:appointmentViewModels="clr-namespace:Galchenko.TestTask.ViewModels.Appointments;assembly=Galchenko.TestTask.ViewModels"
         xmlns:viewModels="clr-namespace:Galchenko.TestTask.ViewModels;assembly=Galchenko.TestTask.ViewModels"
         xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
 
-        d:DataContext="{d:DesignInstance viewModels:MainViewModel}"
+        d:DataContext="{d:DesignInstance viewModels:MainViewModel_v2}"
 
         Title="Clinic Registration v0.0.1b" MinHeight="450" MinWidth="800"
         WindowStartupLocation="CenterScreen"
@@ -38,13 +40,13 @@
                     <TabItem.Header>
                         <TextBlock>Patients</TextBlock>
                     </TabItem.Header>
-                    <userControls:PatientListUserControl x:Name="m_PatientList" DataContext="{Binding}" />
+                    <userControls:CrudUserControl x:Name="m_PatientList" DataContext="{Binding PatientCrudVm}" />
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
                         <TextBlock>Appointments</TextBlock>
                     </TabItem.Header>
-                    <userControls:AppointmentListUserControl x:Name="m_AppointmentList" DataContext="{Binding}" />
+                    <userControls:CrudUserControl x:Name="m_AppointmentList" DataContext="{Binding AppointmentCrudVm}" />
                 </TabItem>
             </TabControl>
         </Grid>
