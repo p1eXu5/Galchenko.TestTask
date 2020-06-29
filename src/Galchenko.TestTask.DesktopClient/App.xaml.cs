@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+
 using Galchenko.TestTask.ApplicationLayer;
 using Galchenko.TestTask.ApplicationLayer.Common;
 using Galchenko.TestTask.DesktopClient.DialogWindows;
@@ -14,9 +9,13 @@ using Galchenko.TestTask.Persistence;
 using Galchenko.TestTask.ViewModels;
 using Galchenko.TestTask.ViewModels.Appointments;
 using Galchenko.TestTask.ViewModels.Patients;
+
 using Microsoft.EntityFrameworkCore;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+
 using p1eXu5.Wpf.MvvmBaseLibrary;
 
 namespace Galchenko.TestTask.DesktopClient
@@ -90,7 +89,10 @@ namespace Galchenko.TestTask.DesktopClient
 
         private void ConfigureServices( IServiceCollection services, IConfiguration configuration )
         {
-            services.AddLogging();
+            services.AddLogging( cfg => {
+                cfg.AddConsole();
+                cfg.AddDebug();
+            } );
 
             services.AddApplicationLayer();
             services.AddPersistence( configuration );
